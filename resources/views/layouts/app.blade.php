@@ -22,7 +22,7 @@
 <body>
 @include('layouts.header')
 <div id="app">
-    <main>
+    <main class="flex-grow-1">
         @yield('content')
     </main>
 </div>

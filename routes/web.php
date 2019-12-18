@@ -23,8 +23,6 @@ Route::prefix('user')->group(function () {
 
 // Product Routes
 Route::prefix('product')->group(function () {
-    Route::get('{product}', 'ProductController@show')->name('product.show');
-
     // Requires Auth
     Route::middleware(['auth'])->group(function () {
         Route::get('mine', 'ProductController@mine')->name('product.mine');
@@ -42,5 +40,6 @@ Route::prefix('product')->group(function () {
             Route::post('/', 'ProductReviewController@store')->name('product.review.store');
         });
     });
+    Route::get('{product}', 'ProductController@show')->name('product.show');
 
 });

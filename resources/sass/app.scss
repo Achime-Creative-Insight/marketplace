@@ -12,6 +12,12 @@
     --overlay: #{$overlay};
 }
 
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 // Utilities
 .bg-grey {
     background: $gray-300;

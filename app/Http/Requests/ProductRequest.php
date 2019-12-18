@@ -41,7 +41,7 @@ class ProductRequest extends FormRequest
                     'name' => 'required|string',
                     'image' => 'file',
                     'description' => 'required|string',
-                    'price' => 'required|float',
+                    'price' => 'required|numeric',
                     'is_physical' => 'required|boolean',
                     'category_id' => 'required|int|exists:categories,id'
                 ];
@@ -51,7 +51,7 @@ class ProductRequest extends FormRequest
                     'name' => 'string',
                     'image' => 'file',
                     'description' => 'string',
-                    'price' => 'float',
+                    'price' => 'numeric',
                     'is_physical' => 'boolean',
                     'category_id' => 'int|exists:categories,id'
                 ];

@@ -14,7 +14,7 @@ class ProductRequest extends FormRequest
      */
     public function authorize()
     {
-        switch ($this->method) {
+        switch ($this->method()) {
             case 'POST':
                 $authorized = true;
                 break;
@@ -35,7 +35,7 @@ class ProductRequest extends FormRequest
      */
     public function rules()
     {
-        switch ($this->method) {
+        switch ($this->method()) {
             case 'POST':
                 return [
                     'name' => 'required|string',

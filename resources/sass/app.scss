@@ -12,6 +12,10 @@
     --overlay: #{$overlay};
 }
 
+body {
+    min-height: 100vh;
+}
+
 // Utilities
 .bg-grey {
     background: $gray-300;

@@ -1,0 +1,53 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Root
+:root {
+    --overlay: #{$overlay};
+}
+
+// Utilities
+.bg-grey {
+    background: $gray-300;
+}
+
+// Header
+.logo {
+    width: $logo-size;
+}
+
+// Hero
+.jumbotron {
+    border-radius: 0;
+}
+
+#hero {
+    min-height: 600px;
+}
+
+#newsletterCallout {
+    height: 400px;
+}
+
+// Footer
+
+footer {
+    background-color: $dark-grey;
+    color: var(--white);
+}
+
+footer div#bottom {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 10px;
+}
+
+footer div#bottom span {
+    color: var(--primary);
+}

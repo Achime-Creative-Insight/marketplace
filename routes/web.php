@@ -27,6 +27,8 @@ Route::prefix('product')->group(function () {
 
     // Requires Auth
     Route::middleware(['auth'])->group(function () {
+        Route::get('mine', 'ProductController@mine')->name('product.mine');
+
         Route::get('new', 'ProductController@create')->name('product.create');
         Route::post('new', 'ProductController@store')->name('product.store');
 

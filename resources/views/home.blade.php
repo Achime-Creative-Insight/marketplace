@@ -34,7 +34,7 @@
                                 <h5>{{$product->name}}</h5>
                                 <sub class="badge badge-primary">by {{$product->owner->name}}</sub>
                                 <p>
-                                    {{$product->description}}
+                                    {{\Illuminate\Support\Str::limit($product->description, 150, '...')}}
                                 </p>
                                 <a href="{{ route('product.show', $product->slug) }}" class="btn-outline-primary btn">Details</a>
                             </div>

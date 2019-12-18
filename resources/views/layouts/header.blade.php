@@ -34,8 +34,8 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a href="{{ route('products.mine') }}" class="dropdown-item">My Products</a>
-                            <a href="{{ route('products.create') }}" class="dropdown-item">Add A Product</a>
+                            <a href="{{ route('product.mine') }}" class="dropdown-item">My Products</a>
+                            <a href="{{ route('product.create') }}" class="dropdown-item">Add A Product</a>
                             <hr />
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();

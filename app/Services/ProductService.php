@@ -12,4 +12,9 @@ class ProductService
     {
         return Product::take($limit)->get();
     }
+
+    public function getUsersProducts(int $userId)
+    {
+        return Product::where('user_id', $userId)->get();
+    }
 }

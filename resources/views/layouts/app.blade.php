@@ -21,9 +21,17 @@
 </head>
 <body>
 @include('layouts.header')
+<<<<<<< HEAD
 <main id="app" class="flex-grow-1">
     @yield('content')
 </main>
+=======
+<div id="app">
+    <main class="flex-grow-1">
+        @yield('content')
+    </main>
+</div>
+>>>>>>> 57e9a951bf0d9225c0927c3c029eaa864a8dd72c
 @include('layouts.footer')
 </body>
 </html>

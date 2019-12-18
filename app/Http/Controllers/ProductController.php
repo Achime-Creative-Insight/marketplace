@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Services\ProductService;
+use App\Services\CategoryService;
 use Illuminate\Http\Request;
+use App\Http\Requests\ProductRequest;
 
 class ProductController extends Controller
 {
@@ -33,6 +35,12 @@ class ProductController extends Controller
 
     }
 
+    /**
+     * Display a listing of the currently
+     * authenticated user's resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function mine()
     {
         $products = $this->productService->getUsersProducts(auth()->id());
@@ -44,9 +52,10 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(CategoryService $categoryService)
     {
-        return view();
+        $categories = $categoryService->listCategories();
+        return view('product.create', compact('categories'));
     }
 
     /**
@@ -55,9 +64,12 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
-        //
+        dd($data);
+        $data = $request->validated();
+        $product = $this->productService->storeProduct($data);
+        redirect(route('product.show', $product->slug));
     }
 
     /**

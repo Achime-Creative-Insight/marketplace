@@ -18,7 +18,7 @@ class ProductService
         return Product::where('user_id', $userId)->get();
     }
 
-    public function store(array $data)
+    public function storeProduct(array $data)
     {
         return Product::create($data);
     }

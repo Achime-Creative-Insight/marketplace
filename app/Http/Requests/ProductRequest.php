@@ -65,7 +65,7 @@ class ProductRequest extends FormRequest
     public function validated()
     {
         $validated = parent::validated();
-        $validated['user_id'] = $this->user()->id();
+        $validated['user_id'] = $this->user()->id;
         return $validated;
     }
 }

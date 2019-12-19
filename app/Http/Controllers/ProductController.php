@@ -66,7 +66,6 @@ class ProductController extends Controller
      */
     public function store(ProductRequest $request)
     {
-        dd($data);
         $data = $request->validated();
         $product = $this->productService->storeProduct($data);
         redirect(route('product.show', $product->slug));

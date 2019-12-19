@@ -21,6 +21,7 @@ class ProductService
     public function storeProduct(array $data)
     {
         $data['slug'] = \Illuminate\Support\Str::slug($data['name']) . '-' . dechex(time());
+        $data['image'] = "https://lorempixel.com/640/480/?47853";
         return Product::create($data);
     }
 }

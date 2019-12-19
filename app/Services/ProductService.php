@@ -20,6 +20,7 @@ class ProductService
 
     public function storeProduct(array $data)
     {
+        $data['slug'] = \Illuminate\Support\Str::slug($data['name']) . '-' . dechex(time());
         return Product::create($data);
     }
 }

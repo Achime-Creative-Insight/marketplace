@@ -32,6 +32,6 @@ class HomeController extends Controller
     {
         $popularProducts = $this->productService->getPopularProducts(6);
         $topCategories = $this->categoryService->getTopCategories(6);
-        return view('home', compact('popularProducts'));
+        return view('home', compact('popularProducts, topCategories'));
     }
 }

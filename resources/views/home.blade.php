@@ -35,7 +35,7 @@
 					@endforeach
 				</div>
                 <div class="row text-center">
-                    <div class="col-12">
+                    <div class="col-12 mb-3">
                         <a href="{{ route('product.index') }}" class="btn-outline-primary btn">All Products</a>
                     </div>
 				</div>

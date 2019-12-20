@@ -32,7 +32,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-
+        $products = $this->productService->getProducts();
+        return view('product.index', compact('products'));
     }
 
     /**
@@ -68,8 +69,12 @@ class ProductController extends Controller
     {
         $data = $request->validated();
         $product = $this->productService->storeProduct($data);
+<<<<<<< HEAD
         dd($product);
         redirect(route('product.show', $product->slug));
+=======
+        return redirect()->route('product.show', [$product]);
+>>>>>>> f1a4d7062ab48f8e1c29f9180493198db11edbef
     }
 
     /**

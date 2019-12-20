@@ -24,4 +24,9 @@ class ProductService
         $data['image'] = "https://lorempixel.com/640/480/?47853";
         return Product::create($data);
     }
+
+    public function getProducts()
+    {
+        return Product::paginate();
+    }
 }

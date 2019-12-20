@@ -22,7 +22,8 @@ Route::prefix('user')->group(function () {
 });
 
 // Product Routes
-Route::prefix('product')->group(function () {
+Route::prefix('products')->group(function () {
+    Route::get('/', 'ProductController@index')->name('product.index');
     // Requires Auth
     Route::middleware(['auth'])->group(function () {
         Route::get('mine', 'ProductController@mine')->name('product.mine');

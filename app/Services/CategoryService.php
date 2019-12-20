@@ -11,4 +11,9 @@ class CategoryService
     {
         return Category::all();
     }
+
+    public function getTopCategories(int $limit)
+    {
+        return Category::take($limit)->get();
+    }
 }

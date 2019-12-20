@@ -44,9 +44,9 @@
         <div class="row no-gutters">
             @foreach($topCategories as $category)
             <div class="col">
-                <div class="card">
-                    <div class="card-block">
-                        {{ $category->name }}
+                <div style="height:150px; flex-direction:row;" class="card px-3 align-items-center">
+                    <div class="card-block text-center">
+                        <a href={{ route('category.show', $category->slug) }}>{{ $category->name }}</a>
                     </div>
                 </div>
             </div>

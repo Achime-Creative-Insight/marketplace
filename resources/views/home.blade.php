@@ -50,6 +50,7 @@
                     </div>
                 </div>
             </div>
+            @endforeach
         </div>
     </div>
     <section id="newsletterCallout" class="bg-grey jumbotron mb-0 d-flex align-items-center">

@@ -42,5 +42,10 @@ Route::prefix('products')->group(function () {
         });
     });
     Route::get('{product}', 'ProductController@show')->name('product.show');
+});
 
+Route::prefix('categories')->group(function ()
+{
+    Route::get('/', 'CategoryController@index')->name('category.index');
+    Route::get('{category}', 'CategoryController@show')->name('category.show');
 });

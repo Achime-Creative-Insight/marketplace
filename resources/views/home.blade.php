@@ -42,7 +42,7 @@
     </div>
     <div class="container">
         <div class="row no-gutters">
-            @foreach($topCategories as $categories)
+            @foreach($topCategories as $category)
             <div class="col">
                 <div class="card">
                     <div class="card-block">

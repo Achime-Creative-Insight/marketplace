@@ -9,7 +9,7 @@ class CategoryService
 {
     public function listCategories()
     {
-        return Category::all();
+        return Category::paginate();
     }
 
     public function getTopCategories(int $limit)

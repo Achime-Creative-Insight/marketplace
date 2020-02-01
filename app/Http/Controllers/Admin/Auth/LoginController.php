@@ -47,4 +47,14 @@ class LoginController extends Controller
     {
         return view('admin.auth.login');
     }
+
+    /**
+     * Get the guard to be used during authentication.
+     *
+     * @return \Illuminate\Contracts\Auth\StatefulGuard
+     */
+    protected function guard()
+    {
+        return Auth::guard('admin');
+    }
 }

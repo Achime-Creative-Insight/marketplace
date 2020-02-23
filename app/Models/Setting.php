@@ -8,6 +8,7 @@ class Setting extends Model
 {
     public static function retrieve(string $settingName)
     {
-        return self::where('name', $settingName)->orderBy('date_modified', 'DESC')->first();
+        $setting = self::where('name', $settingName)->orderBy('date_modified', 'DESC')->first();
+        return $setting->value ?? null;
     }
 }

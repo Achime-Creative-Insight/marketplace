@@ -40,7 +40,7 @@
                                         type="text"
                                         class="form-control @error('featured_video') is-invalid @enderror"
                                         name="featured_video"
-                                        value="{{ old('featured_video') ? old('featured_video') : ( isset($settings['featured_video']) ? $settings['featured_video'] : "" ) }}" required
+                                        value="{{ old('featured_video') ? old('featured_video') : ( isset($settings['featured_video']) ? $settings['featured_video'] : "" ) }}"
                                         autocomplete="featured_video"
                                         autofocus
                                     />

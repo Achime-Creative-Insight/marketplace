@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Services\CategoryService;
+use App\Services\SettingsService;
 use App\Services\ProductService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -17,11 +18,16 @@ class HomeController extends Controller
      * @var CategoryService
      */
     private $categoryService;
+    /**
+     * @var SettingsService
+     */
+    private $settingsService;
 
-    public function __construct(ProductService $productService, CategoryService $categoryService)
+    public function __construct(ProductService $productService, CategoryService $categoryService, SettingsService $settingsService)
     {
         $this->productService = $productService;
         $this->categoryService = $categoryService;
+        $this->settingsService = $settingsService;
     }
 
     /**
@@ -31,6 +37,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin.home');
+        $settings = $settingsService->all();
+        return view('admin.home', \compact('settings'));
     }
 }

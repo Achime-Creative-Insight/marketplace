@@ -23,17 +23,46 @@
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-md-8 text-center">
-				<h2>Manage Products</h2>
-				<!-- <div class="row">
-					@foreach($popularProducts as $product)
-					    @include('product.partials.list', $product)
-					@endforeach
-				</div> -->
-                <div class="row text-center">
-                    <div class="col-12 mb-3">
-                        <a href="{{ route('product.index') }}" class="btn-outline-primary btn">All Products</a>
+                <h1>Settings</h1>
+                <div class="card">
+                    <div class="card-header">
+                        Featured Video
                     </div>
-				</div>
+                    <div class="card-body">
+                        <form method="POST" action="{{ route('admin.settings') }}">
+                            @csrf
+                            <div class="form-group row">
+                                <label for="featured_video" class="col-md-4 col-form-label text-md-right">Add the ID for the YouTube video here:(Leave blank for no video)</label>
+
+                                <div class="col-md-6">
+                                    <input
+                                        id="featured_video"
+                                        type="text"
+                                        class="form-control @error('featured_video') is-invalid @enderror"
+                                        name="featured_video"
+                                        value="{{ old('featured_video') ? old('featured_video') : isset($settings['featured_video']) ? $settings['featured_video'] : ""  }}" required
+                                        autocomplete="featured_video"
+                                        autofocus
+                                    />
+
+                                    @error('featured_video')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="form-group row mb-0">
+                                <div class="col-md-8 offset-md-4">
+                                    <button type="submit" class="btn btn-primary">
+                                        Submit
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
 			</div>
 		</div>
 	</div>
@@ -45,42 +74,9 @@
                 </div>
             </div>
 			<div class="row no-gutters">
-				<!-- @foreach($topCategories as $category)
-				<div class="col">
-					<div style="height:150px; flex-direction:row;" class="card px-3 align-items-center">
-						<div class="card-block text-center">
-							<a href={{ route('category.show', $category->slug) }}>{{ $category->name }}</a>
-						</div>
-					</div>
-				</div>
-				@endforeach -->
-			</div>
+
+            </div>
 		</div>
 	</section>
-	<section id="newsletterCallout" class="bg-grey jumbotron mb-0 d-flex align-items-center">
-		<div class="container">
-			<div class="row text-center">
-				<div class="col-md-6">
-					<h3>
-						Get new products, great deals, the latest news straight to your inbox!
-					</h3>
-					<form action="{{route('newsletter.signup')}}" method="post"
-						class="form-inline justify-content-center">
-						<div class="form-group mx-sm-3 mb-2">
-							<label for="email" class="sr-only">Email</label>
-							<input type="email" name="email" class="form-control form-control-lg" id="email"
-                                   placeholder="Email">
-                        </div>
-							<button type="submit" class="btn btn-primary mb-2">Submit</button>
-					</form>
-				</div>
-				<div class="col-md-6">
-					<h3>
-						Promote your idea or product to the world with our boosted ads!
-					</h3>
-					<a href="/products/promote" class="btn btn-primary btn-lg">Promote my Idea!</a>
-				</div>
-			</div>
-		</div>
-	</section>
+
 	@endsection

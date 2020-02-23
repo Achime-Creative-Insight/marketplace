@@ -21,6 +21,8 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
     Route::middleware(['auth:admin'])->group(function()
     {
         Route::get('/', 'HomeController@index')->name('home');
+
+        Route::post('/settings', 'SettingsController@save')->name('settings');
     });
 
 });

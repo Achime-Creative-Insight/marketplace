@@ -26,7 +26,7 @@ class SettingsService
     public function save(array $settings)
     {
         foreach ($settings as $name => $value) {
-            Setting::updateOrCreate(['name' => name], ['value' => $value]);
+            Setting::updateOrCreate(['name' => $name], ['value' => $value]);
         }
         return true;
     }

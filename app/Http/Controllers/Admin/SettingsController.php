@@ -27,6 +27,6 @@ class SettingsController extends Controller
     {
         $settings = $request->all();
         $this->settingsService->save($settings);
-        \redirect(\route('admin.home'));
+        return \redirect(\route('admin.home'));
     }
 }

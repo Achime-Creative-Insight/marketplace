@@ -62,6 +62,22 @@
 			</div>
 		</div>
 	</section>
+	@if ($featured_video = App\Models\Setting::retrieve('featured_video'))
+	<section id="featured-video" class="jumbotron mb-0 align-items-center">
+		<div class="container">
+			<div class="row text-center">
+				<div class="col-md-8 offset-md-2">
+					<h3>
+						Featured
+					</h3>
+					<div class="embed-responsive embed-responsive-16by9">
+						<iframe width="1280" height="720" src="https://www.youtube.com/embed/6T8_ZBooIX4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	@endif
 	<section id="newsletterCallout" class="bg-grey jumbotron mb-0 d-flex align-items-center">
 		<div class="container">
 			<div class="row text-center">

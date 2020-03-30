@@ -37,7 +37,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $settings = $settingsService->all();
+        $settings = $this->settingsService->all();
         return view('admin.home', \compact('settings'));
     }
 }

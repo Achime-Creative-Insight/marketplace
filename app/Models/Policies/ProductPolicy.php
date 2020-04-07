@@ -53,7 +53,7 @@ class ProductPolicy
      */
     public function update(User $user, Product $product)
     {
-        return $this->userOwnsProduct();
+        return $this->userOwnsProduct($user, $product);
     }
 
     /**
@@ -65,7 +65,7 @@ class ProductPolicy
      */
     public function delete(User $user, Product $product)
     {
-        return $this->userOwnsProduct();
+        return $this->userOwnsProduct($user, $product);
     }
 
     /**
@@ -77,7 +77,7 @@ class ProductPolicy
      */
     public function restore(User $user, Product $product)
     {
-        return $this->userOwnsProduct();
+        return $this->userOwnsProduct($user, $product);
     }
 
     /**
@@ -89,10 +89,10 @@ class ProductPolicy
      */
     public function forceDelete(User $user, Product $product)
     {
-        return $this->userOwnsProduct();
+        return $this->userOwnsProduct($user, $product);
     }
 
-    private function userOwnsProduct()
+    private function userOwnsProduct(User $user, Product $product)
     {
         if ($user->id === $product->owner->id) {
             return true;

@@ -43,6 +43,9 @@
 		</div>
 	</div>
 	<section class="py-3 bg-white">
+		
+	</section>
+	<section class="py-3 bg-white">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
@@ -71,7 +74,7 @@
 						Featured
 					</h3>
 					<div class="embed-responsive embed-responsive-16by9">
-						<iframe width="1280" height="720" src="https://www.youtube.com/embed/6T8_ZBooIX4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<iframe width="1280" height="720" src={{"https://www.youtube.com/embed/" . $featured_video}} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					</div>
 				</div>
 			</div>

@@ -53,7 +53,126 @@
                                 </div>
                             </div>
                             <div class="form-group row mb-0">
-                                <div class="col-md-8 offset-md-4">
+                                <div class="col-md-8 offset-md-2">
+                                    <button type="submit" class="btn btn-primary">
+                                        Submit
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        Advert Slots
+                    </div>
+                    <div class="card-body">
+                        <form method="POST" enctype="multipart/form-data" action="{{ route('admin.settings') }}">
+                            @csrf
+                            <div class="form-group row">
+                                @if (isset($settings['hero_banner_ad']))
+                                <div class="col-12 mb-3">
+                                    <img class="img-fluid" src="{{$settings['hero_banner_ad']}}" />
+                                </div>
+                                @endif
+                                <div class="col-md-6">
+                                    <label for="hero_banner_ad" class="col-form-label text-md-right">Hero Banner Slot</label>
+                                    <p>Upload the image here (Recommended Resolution 1500x500)</p>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <input
+                                        id="hero_banner_ad"
+                                        type="file"
+                                        class="form-control @error('hero_banner_ad') is-invalid @enderror"
+                                        name="hero_banner_ad"
+                                        autocomplete="hero_banner_ad"
+                                        autofocus
+                                    />
+
+                                    @error('hero_banner_ad')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="form-group row">
+                                @if (isset($settings['product_banner_ad']))
+                                <div class="col-12 mb-3">
+                                    <img class="img-fluid" src="{{$settings['product_banner_ad']}}" />
+                                </div>
+                                @endif
+                                <div class="col-md-6">
+                                    <label for="product_banner_ad" class="col-form-label text-md-right">Hero Banner Slot</label>
+                                    <p>Upload the image here (Recommended Resolution 1500x500)</p>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <input
+                                        id="product_banner_ad"
+                                        type="file"
+                                        class="form-control @error('product_banner_ad') is-invalid @enderror"
+                                        name="product_banner_ad"
+                                        autocomplete="product_banner_ad"
+                                        autofocus
+                                    />
+
+                                    @error('product_banner_ad')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="form-group row mb-0">
+                                <div class="col-md-8 offset-md-2">
+                                    <button type="submit" class="btn btn-primary">
+                                        Submit
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        Terms of Use
+                    </div>
+                    <div class="card-body">
+                        <form method="POST" enctype="multipart/form-data" action="{{ route('admin.settings') }}">
+                            @csrf
+                            <div class="form-group row">
+                                @if (isset($settings['hero_banner_ad']))
+                                <div class="col-12 mb-3">
+                                    <img class="img-fluid" src="{{$settings['hero_banner_ad']}}" />
+                                </div>
+                                @endif
+                                <div class="col-md-6">
+                                    <label for="hero_banner_ad" class="col-form-label text-md-right">Hero Banner Slot</label>
+                                    <p>Upload the file here (Must be PDF Format)</p>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <input
+                                        id="hero_banner_ad"
+                                        type="file"
+                                        class="form-control @error('hero_banner_ad') is-invalid @enderror"
+                                        name="hero_banner_ad"
+                                        autocomplete="hero_banner_ad"
+                                        autofocus
+                                    />
+
+                                    @error('hero_banner_ad')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="form-group row mb-0">
+                                <div class="col-md-8 offset-md-2">
                                     <button type="submit" class="btn btn-primary">
                                         Submit
                                     </button>

@@ -25,6 +25,17 @@
 			</div>
 		</div>
 	</div>
+	@if ($hero_banner_ad = App\Models\Setting::retrieve('hero_banner_ad'))
+	<section class="py-3">
+		<div class="container">
+			<div class="row text-center">
+				<div class="col-md-8 offset-md-2">
+					<img src={{$hero_banner_ad}} class="img-fluid" />
+				</div>
+			</div>
+		</div>
+	</section>
+	@endif
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-md-8 text-center">
@@ -42,9 +53,17 @@
 			</div>
 		</div>
 	</div>
+	@if ($product_banner_ad = App\Models\Setting::retrieve('product_banner_ad'))
 	<section class="py-3 bg-white">
-		
+		<div class="container">
+			<div class="row text-center">
+				<div class="col-md-8 offset-md-2">
+					<img src={{$product_banner_ad}} class="img-fluid" />
+				</div>
+			</div>
+		</div>
 	</section>
+	@endif
 	<section class="py-3 bg-white">
         <div class="container">
             <div class="row">

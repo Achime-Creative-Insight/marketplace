@@ -5,6 +5,7 @@ namespace App\Services;
 
 
 use App\Models\Setting;
+use Illuminate\Http\UploadedFile;
 
 class SettingsService
 {
@@ -29,5 +30,12 @@ class SettingsService
             Setting::updateOrCreate(['name' => $name], ['value' => $value]);
         }
         return true;
+    }
+
+    public function processImage(UploadedFile $image)
+    {
+        $imageName = time().'.'.$image->extension();
+        $image->move(public_path('images/ads'), $imageName);
+        return '/images/ads/' . $imageName;
     }
 }

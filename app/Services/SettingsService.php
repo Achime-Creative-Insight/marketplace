@@ -38,4 +38,11 @@ class SettingsService
         $image->move(public_path('images/ads'), $imageName);
         return '/images/ads/' . $imageName;
     }
+
+    public function processDocument(UploadedFile $doc)
+    {
+        $docName = time().'.'.$doc->extension();
+        $doc->move(public_path('docs'), $docName);
+        return '/docs/' . $docName;
+    }
 }

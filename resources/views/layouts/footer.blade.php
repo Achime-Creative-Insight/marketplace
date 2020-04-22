@@ -17,7 +17,7 @@
                 </div>
                 <div class="col-md">
                     <h3>Social</h3>
-                    <p>We're Social. Connect with us on these platforms</p>
+                    <p>We are Social. Connect with us on these platforms</p>
                     <p>
                         Tech Bank Africa
                         <a href="https://facebook.com/techbankafrica"><i class="fab fa-facebook"></i></a>
@@ -29,8 +29,14 @@
                         &nbsp;
                     </p>
                     <p>
-                        <a target="_blank" href="privacy-policy.pdf">Privacy Policy</a>&nbsp; |
-                        &nbsp;<a target="_blank" href="terms-of-use.pdf">Terms of Use</a>
+                        @if ($privacy_policy = App\Models\Setting::retrieve('privacy_policy'))
+                        <a target="_blank" href={{$privacy_policy}}>Privacy Policy</a>
+                        @endif
+                        &nbsp; |
+                        &nbsp;
+                        @if ($terms_of_use = App\Models\Setting::retrieve('terms_of_use'))
+                        <a target="_blank" href={{$terms_of_use}}>Terms of Use</a>
+                        @endif
                     </p>
                 </div>
             </div>

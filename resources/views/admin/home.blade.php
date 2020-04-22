@@ -138,33 +138,61 @@
                 </div>
                 <div class="card">
                     <div class="card-header">
-                        Terms of Use
+                        {{"Terms of Use & Privacy Policy"}}
                     </div>
                     <div class="card-body">
                         <form method="POST" enctype="multipart/form-data" action="{{ route('admin.settings') }}">
                             @csrf
                             <div class="form-group row">
-                                @if (isset($settings['hero_banner_ad']))
+                                @if (isset($settings['terms_of_use']))
                                 <div class="col-12 mb-3">
-                                    <img class="img-fluid" src="{{$settings['hero_banner_ad']}}" />
+                                    <a href="{{$settings['terms_of_use']}}">Terms PDF</a>
                                 </div>
                                 @endif
                                 <div class="col-md-6">
-                                    <label for="hero_banner_ad" class="col-form-label text-md-right">Hero Banner Slot</label>
+                                    <label for="terms_of_use" class="col-form-label text-md-right">Terms of use</label>
                                     <p>Upload the file here (Must be PDF Format)</p>
                                 </div>
 
                                 <div class="col-md-6">
                                     <input
-                                        id="hero_banner_ad"
+                                        id="terms_of_use"
                                         type="file"
-                                        class="form-control @error('hero_banner_ad') is-invalid @enderror"
-                                        name="hero_banner_ad"
-                                        autocomplete="hero_banner_ad"
+                                        class="form-control @error('terms_of_use') is-invalid @enderror"
+                                        name="terms_of_use"
+                                        autocomplete="terms_of_use"
                                         autofocus
                                     />
 
-                                    @error('hero_banner_ad')
+                                    @error('terms_of_use')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                @if (isset($settings['privacy_policy']))
+                                <div class="col-12 mb-3">
+                                    <a href="{{$settings['privacy_policy']}}">Privacy Policy PDF</a>
+                                </div>
+                                @endif
+                                <div class="col-md-6">
+                                    <label for="privacy_policy" class="col-form-label text-md-right">Privacy Policy</label>
+                                    <p>Upload the file here (Must be PDF Format)</p>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <input
+                                        id="privacy_policy"
+                                        type="file"
+                                        class="form-control @error('privacy_policy') is-invalid @enderror"
+                                        name="privacy_policy"
+                                        autocomplete="privacy_policy"
+                                        autofocus
+                                    />
+
+                                    @error('privacy_policy')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>

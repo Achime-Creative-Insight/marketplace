@@ -8,10 +8,22 @@ use App\Http\Controllers\Controller;
 
 class SettingsController extends Controller
 {
+    /**
+     * Settings to be validated as images
+     */
     const images = [
         'hero_banner_ad',
         'product_banner_ad'
     ];
+
+    /**
+     * Settings to be validated as documents
+     */
+    const docs = [
+        'terms_of_use',
+        'privacy_policy'
+    ];
+
     /**
      * @var SettingsService
      */
@@ -37,6 +49,12 @@ class SettingsController extends Controller
                     $key => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
                 ]);
                 return $setting = $this->settingsService->processImage($setting);
+            }
+            elseif (in_array($key, self::docs)) {
+                $request->validate([
+                    $key => 'mimes:pdf'
+                ]);
+                return $setting = $this->settingsService->processDocument($setting);
             }
             return $setting;
         });

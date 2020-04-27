@@ -32,19 +32,19 @@
 				@csrf
 				<div class="form-group">
 					<label for="name">Name:</label>
-					<input type="text" class="form-control" placeholder="Enter Name" name="name" id="name">
+					<input type="text" class="form-control" required placeholder="Enter Name" name="name" id="name">
                     </div>
 					<div class="form-group">
 						<label for="image">Image:</label>
-						<!-- <input type="text" class="form-control" placeholder="Enter Name" name="name" id="name"> -->
+						<!-- <input type="text" class="form-control" required placeholder="Enter Name" name="name" id="name"> -->
 					</div>
 					<div class="form-group">
 						<label for="description">Description:</label>
-						<textarea name="description" id="description" placeholder="Description"></textarea>
+						<textarea name="description" id="description" required placeholder="Description"></textarea>
 					</div>
 					<div class="form-group">
 						<label for="price">Price:</label>
-						<input type="number" class="form-control" placeholder="10000" name="price" id="price">
+						<input type="number" class="form-control" required placeholder="10000" name="price" id="price">
                     </div>
 						<div class="form-group">
 							<label for="is_physical">Is Physical:</label>

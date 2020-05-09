@@ -39,6 +39,7 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <p class="dropdown-item">My User ID - {{ Auth::user()->slug }}</p>
                             <a href="{{ route('product.mine') }}" class="dropdown-item">My Products</a>
                             <a href="{{ route('product.create') }}" class="dropdown-item">Add A Product</a>
                             <hr />

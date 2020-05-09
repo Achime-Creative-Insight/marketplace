@@ -44,6 +44,7 @@ class User extends Authenticatable
         {
             if (! $user->slug){
                 $user->slug = (string) Str::uuid();
+                $user->save();
             }
         });
     }

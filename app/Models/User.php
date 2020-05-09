@@ -38,13 +38,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    protected function booted()
+    protected static function boot()
     {
+        parent::boot();
         static::creating(function ($user)
         {
             if (! $user->slug){
                 $user->slug = (string) Str::uuid();
-                $user->save();
             }
         });
     }

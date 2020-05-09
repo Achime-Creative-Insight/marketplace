@@ -12,9 +12,9 @@ class UserSeeder extends Seeder
     public function run()
     {
         factory(App\Models\User::class, 50)->create()->each(function ($user) {
-            $user->products()->save(factory(App\Models\Product::class, rand(0,5), [
+            $user->products()->createMany(factory(App\Models\Product::class, rand(1,5), [
                 'user_id' => $user->id
-            ])->make());
+            ])->make()->toArray());
         });
     }
 }

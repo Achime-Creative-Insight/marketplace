@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
     <div class="container">
-        <a class="navbar-brand" href="{{ url('/') }}">
+        <a class="navbar-brand" href="{{ url('/admin') }}">
             <img src="{{ asset('images/logo.png') }}" class="img-fluid logo" alt="{{ config('app.name', 'Laravel') }}"/>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -11,7 +11,12 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
-
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('admin.product.index') }}">Manage Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('admin.category.index') }}">Manage Categories</a>
+                </li>
             </ul>
 
             <!-- Right Side Of Navbar -->
@@ -19,7 +24,7 @@
                 <!-- Authentication Links -->
                 @guest
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <a class="nav-link" href="{{ route('admin.login') }}">{{ __('Login') }}</a>
                     </li>
                 @else
                     <li class="nav-item dropdown">

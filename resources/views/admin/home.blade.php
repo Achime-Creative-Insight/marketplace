@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('admin.layouts.app')
 
 @section('content')
 <div class="jumbotron d-flex align-items-center bg-secondary text-white" id="hero">

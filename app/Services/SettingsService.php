@@ -6,6 +6,7 @@ namespace App\Services;
 
 use App\Models\Setting;
 use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
 
 class SettingsService
 {
@@ -34,15 +35,17 @@ class SettingsService
 
     public function processImage(UploadedFile $image)
     {
+        $disk = config('app.env') === 'local' ? 'public' : 's3';    
         $imageName = time().'.'.$image->extension();
-        $image->move(public_path('images/ads'), $imageName);
-        return '/images/ads/' . $imageName;
+        $path = $image->store('images/ads', $disk);
+        return Storage::disk($disk)->url($path);
     }
 
     public function processDocument(UploadedFile $doc)
     {
+        $disk = config('app.env') === 'local' ? 'public' : 's3';
         $docName = time().'.'.$doc->extension();
-        $doc->move(public_path('docs'), $docName);
-        return '/docs/' . $docName;
+        $path = $doc->store('docs', $disk);
+        return Storage::disk($disk)->url($path);
     }
 }

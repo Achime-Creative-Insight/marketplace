@@ -24,6 +24,17 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
 
         Route::post('/settings', 'SettingsController@save')->name('settings');
 
+        Route::prefix('users')->group(function () {
+            Route::get('/', 'UserController@index')->name('user.index');
+            // Requires Auth
+            Route::get('{user}/edit', 'UserController@edit')->name('user.edit');
+            Route::put('{user}', 'UserController@update')->name('user.update');
+    
+            Route::delete('{user}', 'UserController@destroy')->name('user.destroy');
+            
+            Route::get('{user}', 'UserController@show')->name('user.show');
+        });
+
         Route::prefix('products')->group(function () {
             Route::get('/', 'ProductController@index')->name('product.index');
             // Requires Auth

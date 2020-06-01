@@ -12,6 +12,9 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
+                    <a class="nav-link" href="{{ route('admin.user.index') }}">Manage Users</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{{ route('admin.product.index') }}">Manage Products</a>
                 </li>
                 <li class="nav-item">

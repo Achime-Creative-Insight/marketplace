@@ -37,11 +37,11 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
         
         Route::prefix('categories')->group(function ()
         {
-            Route::get('/', 'CategoryController@index')->name('category.index');
-            Route::get('{category}', 'CategoryController@show')->name('category.show');
-
             Route::get('new', 'CategoryController@create')->name('category.create');
             Route::post('new', 'CategoryController@store')->name('category.store');
+
+            Route::get('/', 'CategoryController@index')->name('category.index');
+            Route::get('{category}', 'CategoryController@show')->name('category.show');
     
             Route::get('{category}/edit', 'CategoryController@edit')->name('category.edit');
             Route::put('{category}', 'CategoryController@update')->name('category.update');

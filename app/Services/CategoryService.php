@@ -16,4 +16,10 @@ class CategoryService
     {
         return Category::take($limit)->get();
     }
+
+    public function storeCategory(array $data)
+    {
+        $data['slug'] = \Illuminate\Support\Str::slug($data['name']) . '-' . dechex(time());
+        return Category::create($data);
+    }
 }

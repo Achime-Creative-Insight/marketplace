@@ -26,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         if (config('app.env') === 'production') {
-            URL::forceScheme('https');
+            URL::forceScheme('http');
         }
         Schema::defaultStringLength(191);//Issue with older MySQL versions
     }
